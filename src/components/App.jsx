@@ -6,7 +6,7 @@ const Home = lazy(() => import('../pages/home/Home'));
 const Catalog = lazy(() => import('../pages/catalog/Catalog'));
 const Favorites = lazy(() => import('../pages/favorites/Favorites'));
 
-const App = () => {
+export const App = () => {
   return (
     <Suspense>
       <Routes>
@@ -20,5 +20,3 @@ const App = () => {
     </Suspense>
   );
 };
-
-export { App };

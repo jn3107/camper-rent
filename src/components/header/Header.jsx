@@ -1,6 +1,4 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import css from './Header.module.css';
-import '../../index.css';
 
 const Header = () => {
   return (
