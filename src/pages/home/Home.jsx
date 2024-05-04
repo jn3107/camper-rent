@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Loader } from 'components/loader/Loader';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -7,6 +8,14 @@ const Home = () => {
   const handlerNavigate = () => {
     navigate('/catalog');
   };
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <div>
@@ -21,6 +30,7 @@ const Home = () => {
       <button type="button" onClick={handlerNavigate}>
         Click me!
       </button>
+      {loading && <Loader />}
     </div>
   );
 };
