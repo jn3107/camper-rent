@@ -1,22 +1,6 @@
 export const App = () => {
   return (
     <div>
-      <nav>
-        <a href="">
-          <img src="../images/logo-icon.svg" alt="Logo icon" />
-        </a>
-        <ul>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">Catalog</a>
-          </li>
-          <li>
-            <a href="">Favorites</a>
-          </li>
-        </ul>
-      </nav>
       <h1>Camper Rent</h1>
       <p>
         We will help you make your travels more interesting and exciting. Our
