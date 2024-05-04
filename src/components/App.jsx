@@ -1,15 +1,24 @@
-export const App = () => {
+import React, { Suspense, lazy } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+const Header = lazy(() => import('./header/Header'));
+const Home = lazy(() => import('../pages/home/Home'));
+const Catalog = lazy(() => import('../pages/catalog/Catalog'));
+const Favorites = lazy(() => import('../pages/favorites/Favorites'));
+
+const App = () => {
   return (
-    <div>
-      <h1>Camper Rent</h1>
-      <p>
-        We will help you make your travels more interesting and exciting. Our
-        service includes the rental of campers for any style of trip for any
-        company. We are chosen by both regular customers and those who like to
-        try something new. Hurry up, click the button below, and choose an
-        unforgettable experience.
-      </p>
-      <button type="button">Click me!</button>
-    </div>
+    <Suspense>
+      <Routes>
+        <Route path="/" element={<Header />}>
+          <Route index element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Suspense>
   );
 };
+
+export { App };
