@@ -4,9 +4,9 @@ import FavoritesList from '../../components/favoritesList/FavoritesList';
 const Favorites = () => {
   return (
     <>
-      <section>
+      <div>
         <FavoritesList />
-      </section>
+      </div>
     </>
   );
 };

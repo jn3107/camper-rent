@@ -4,9 +4,9 @@ import List from '../../components/list/List';
 const Catalog = () => {
   return (
     <>
-      <section>
+      <div>
         <List />
-      </section>
+      </div>
     </>
   );
 };
